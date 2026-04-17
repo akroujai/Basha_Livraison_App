@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 import LogoutButton from '@/components/auth/LogoutButton';
 import { ADMIN_ROLES, hasRequiredRole } from '@/lib/auth';
 import {
@@ -32,6 +33,15 @@ export default function AdminDashboardPage() {
         </div>
 
         <p className="text-gray-700">Acces autorise pour: admin_principal, admin_secondaire.</p>
+
+        <div className="mt-4">
+          <Link
+            href="/admin/users"
+            className="inline-flex rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
+          >
+            Gerer les utilisateurs
+          </Link>
+        </div>
       </div>
     </main>
   );
